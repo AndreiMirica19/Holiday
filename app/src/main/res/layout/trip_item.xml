@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+     <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/talgo"
+            android:id="@+id/image"
+            />
+
+        <TextView
+            android:id="@+id/text_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="200dp"
+            android:textColor="@color/yellow"
+            android:layout_marginEnd="0dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/aclonica"
+            android:maxLines="1"
+            android:text="Title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/text_view_description"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/aclonica"
+            android:textSize="30dp"
+            android:textColor="@color/navy"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_title"
+            android:text="Description" />
+        <TextView
+            android:fontFamily="@font/aclonica"
+            android:id="@+id/text_view_priority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            android:textSize="30dp"
+            android:layout_below="@id/text_view_description"
+            android:text="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/btn"
+            android:src="@drawable/favorite_empty"
+            />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

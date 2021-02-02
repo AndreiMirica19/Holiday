@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/yellow"
+        android:id="@+id/TripName"
+        android:text="Trip Name:"
+        android:textSize="30dp"
+        android:fontFamily="@font/aclonica"
+        android:textStyle="bold"
+
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/TripName"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/aclonica"
+        android:textColor="@color/navy"
+        android:id="@+id/TripNameInput"
+        android:textSize="30dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/TripNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/yellow"
+        android:id="@+id/Destination"
+        android:fontFamily="@font/aclonica"
+        android:text="Destination:"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="0dp"
+        android:fontFamily="@font/aclonica"
+        android:textSize="30dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/navy"
+        app:layout_constraintStart_toEndOf="@id/Destination"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TripNameInput"
+        android:id="@+id/DestinationInput"
+        tools:ignore="MissingConstraints" />
+
+    <RadioGroup
+        android:paddingTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/Destination"
+        android:orientation="vertical"
+        android:id="@+id/radio"
+        tools:ignore="MissingConstraints">
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/radio01"
+            android:fontFamily="@font/aclonica"
+            android:text="City Break"
+            android:textColor="@color/navy"
+            android:textSize="20dp"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/radio02"
+            android:textColor="@color/navy"
+            android:fontFamily="@font/aclonica"
+            android:text="Sea Side"
+            android:textSize="20dp"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/radio03"
+            android:fontFamily="@font/aclonica"
+            android:textColor="@color/navy"
+            android:text="Mountains"
+            android:textSize="20dp"
+            />
+    </RadioGroup>
+    <TextView
+        android:paddingTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/Price"
+        android:fontFamily="@font/aclonica"
+        app:layout_constraintTop_toBottomOf="@id/radio"
+        android:text="Price"
+        android:textSize="30dp"
+        android:textColor="@color/yellow"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:fontFamily="@font/aclonica"
+        android:textColor="@color/navy"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:textSize="30dp"
+        android:paddingTop="20dp"
+        android:paddingLeft="30dp"
+
+        android:id="@+id/slider"
+        app:layout_constraintStart_toEndOf="@id/Price"
+        app:layout_constraintTop_toBottomOf="@id/radio"
+        tools:ignore="MissingConstraints" />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:textColor="@color/navy"
+        android:layout_height="wrap_content"
+        android:id="@+id/dataStart"
+        android:fontFamily="@font/aclonica"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/Price"
+        android:text="Select Start Date"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/navy"
+        android:id="@+id/dataEnd"
+        android:fontFamily="@font/aclonica"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/dataStart"
+        android:text="Select End Date"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+    <RatingBar
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/dataEnd"
+        android:id="@+id/ratingBar"
+        tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow"
+            android:fontFamily="@font/aclonica"
+            android:id="@+id/Temp"
+            android:text="Temperature:"
+            android:textSize="30dp"
+            android:paddingTop="20dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/ratingBar"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="0dp"
+            android:textColor="@color/navy"
+            android:fontFamily="@font/aclonica"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/Temp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/TempInput"
+            android:paddingTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/ratingBar"
+            android:textSize="30dp"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aclonica"
+            android:id="@+id/Humidity"
+            android:textColor="@color/yellow"
+            android:text="Humidity:"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:paddingTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/TempInput"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:textColor="@color/navy"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/Humidity"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/HumidityInput"
+            android:fontFamily="@font/aclonica"
+            android:paddingTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/TempInput"
+            android:textSize="30dp"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aclonica"
+            android:id="@+id/RealFeel"
+            android:text="Real Feel:"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/yellow"
+            android:paddingTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/Humidity"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aclonica"
+            android:textColor="@color/navy"
+            app:layout_constraintStart_toEndOf="@id/Humidity"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/RealFeelInput"
+            app:layout_constraintTop_toBottomOf="@id/HumidityInput"
+            android:textSize="30dp"
+            android:paddingTop="20dp"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

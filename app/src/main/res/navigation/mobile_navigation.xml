@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.holiday.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_about_us"
+        android:name="com.example.holiday.ui.about_us.About_Us_Fragment"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about_us" />
+
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="com.example.holiday.ui.Contact.ContactFragment"
+        android:label="Contact"
+        tools:layout="@layout/fragment_contact" />
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.example.holiday.ui.Share.ShareFragment"
+        android:label="Share"
+        tools:layout="@layout/fragment_share" />
+    <fragment
+        android:id="@+id/nav_favorite"
+        android:name="com.example.holiday.ui.FavList.FavFragment"
+        android:label="favorite"
+        tools:layout="@layout/fragment_favorite" />
+</navigation>
