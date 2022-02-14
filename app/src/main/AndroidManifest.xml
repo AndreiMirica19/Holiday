@@ -21,11 +21,13 @@
             android:theme="@style/Theme.Holiday.NoActionBar">
 
         </activity>
-        <activity android:name=".AddTrip"></activity>
+        <activity android:name=".AddTrip" />
         <activity android:name=".ViewTrip" />
         <activity android:name=".EditInfo" />
         <activity android:name=".AddUser"/>
-        <activity android:name=".Splash">
+        <activity android:name=".Splash"
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,29 +54,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-    /* HomeFragment homeFragment=new HomeFragment();
-       FragmentManager fragmentManager=getSupportFragmentManager();
-       FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-       fragmentTransaction.add(R.id.drawer_layout,homeFragment);*/
-
-
+        appDatabase = appDatabase.getAppDatabase(MainActivity.this);
         tripViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance
                 (this.getApplication()))
                 .get(TripViewModel.class);
+
 
         BookmarkViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance
                 (this.getApplication()))
                 .get(TripViewModel.class);
         Intent intent = new Intent(this, AddTrip.class);
         FloatingActionButton fab = findViewById(R.id.fab);
-        appDatabase = appDatabase.getAppDatabase(MainActivity.this);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivityForResult(intent, 19);
-            }
-        });
+
+        fab.setOnClickListener(view -> startActivityForResult(intent, 19));
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -148,5 +140,9 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    
+
+    public void Add(View view) {
+        Intent intent = new Intent(this, AddTrip.class);
+        startActivityForResult(intent, 19);
+    }
 }

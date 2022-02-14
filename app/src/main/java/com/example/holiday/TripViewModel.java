@@ -31,6 +31,7 @@ public class TripViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<Trips>> getAllTrips() {
+
         return allTrips;
     }
     public LiveData<List<Trips>> getBookmarkedTrips(){

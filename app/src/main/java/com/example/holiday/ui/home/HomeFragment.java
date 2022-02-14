@@ -47,15 +47,18 @@ public class HomeFragment extends Fragment implements TripAdapter.OnTripListener
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         RecyclerView recyclerView =(RecyclerView) root.findViewById(R.id.recycleView);
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity());
+
         recyclerView.setLayoutManager(layoutManager);
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
         recyclerView.setAdapter(adapter);
-        MainActivity.tripViewModel.getAllTrips().observe((LifecycleOwner) getContext(), new Observer<List<Trips>>() {
+       if(MainActivity.tripViewModel!=null)
+       MainActivity.tripViewModel.getAllTrips().observe((LifecycleOwner) getContext(), new Observer<List<Trips>>() {
             @Override
             public void onChanged(List<Trips> trips) {
                 adapter.SetTrips(trips);
+
 
             }
         });
@@ -117,6 +120,7 @@ public class HomeFragment extends Fragment implements TripAdapter.OnTripListener
             trips.setRating(t.getRatingBar());
             trips.setBookmark(false);
             MainActivity.tripViewModel.update(trips);
+
         }
     }
 }
